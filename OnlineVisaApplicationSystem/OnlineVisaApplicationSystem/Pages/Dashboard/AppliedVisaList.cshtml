@@ -1,0 +1,29 @@
+﻿@page "/Dashboard/AppliedVisaList"
+@model OnlineVisaApplicationSystem.Pages.Dashboard.AppliedVisaListModel
+@{
+
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">VisaType</th>
+            <th scope="col">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if(Model.VisaApplicationList!=null)
+       {  @for (int i = 0; i < Model.VisaApplicationList.Count; i++)
+        {
+            <tr>
+                <th scope="row">@i+1</th>
+                <td>@Model.VisaApplicationList[i].Applicant.ApplicantName  </td>
+                <td>@Model.VisaApplicationList[i].VisaType.VisaName </td>
+                <td>@Model.VisaApplicationList[i].Status</td>
+            </tr>
+        }}
+       
+    </tbody>
+</table>

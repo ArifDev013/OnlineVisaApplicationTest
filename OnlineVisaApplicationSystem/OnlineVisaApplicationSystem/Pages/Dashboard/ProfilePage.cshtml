@@ -1,0 +1,49 @@
+﻿@page "/Dashboard/ProfilePage"
+@model OnlineVisaApplicationSystem.Pages.Dashboard.ProfilePageModel
+@{
+}
+
+
+<form name="register-form" id='registerForm' method="post">
+    <main class="my-form">
+        <div class="cotainer">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">My Profile</div>
+                        <div class="card-body">
+                            <div class="form-group row">
+                                <label for="full_name" class="col-md-4 col-form-label text-md-right">Name</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="name" asp-for="user.Name" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="email" asp-for="user.Username" class="form-control" required='email'>
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group row">
+                                <label for="phone_number" class="col-md-4 col-form-label text-md-right">Phone Number</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="phone_number" asp-for="user.Mobile" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    Save
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</form>

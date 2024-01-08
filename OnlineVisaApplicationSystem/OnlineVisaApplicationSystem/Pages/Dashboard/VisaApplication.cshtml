@@ -1,0 +1,200 @@
+﻿@page "/Dashboard/VisaApplication"
+@using static Utils.Enums
+@model OnlineVisaApplicationSystem.Pages.Dashboard.VisaApplicationModel
+@{ 
+}
+
+<form name="register-form" id='registerForm' method="post">
+<main class="my-form">
+    <div class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">Visa Application</div>
+                        <div class="card-body">
+                            <div>
+                             <label>
+                                 Personal Info
+                             </label>
+                             </div>
+                                <div class="form-group row">
+                                    <label for="full_name" class="col-md-4 col-form-label text-md-right">Full Name</label>
+                                    <div class="col-md-6">
+                                    <input type="text" id="full_name" class="form-control" asp-for="VisaApplication.Applicant.ApplicantName" required>
+                                    </div>
+                                </div>
+                                  <div class="form-group row">
+                                    <label for="surename" class="col-md-4 col-form-label text-md-right">Surename</label>
+                                    <div class="col-md-6">
+                                    <input type="text" id="surename" class="form-control" asp-for="VisaApplication.Applicant.Surename"  >
+                                    </div>
+                                </div>
+                                  <div class="form-group row">
+                                      <label for="surename" class="col-md-4 col-form-label text-md-right">Gender</label>
+                                      <div class="col-md-6">
+                                    <select class="selectpicker form-control" id="Gender" asp-for="VisaApplication.Applicant.Gender" asp-items="Html.GetEnumSelectList<Gender>()" data-live-search="true" required>
+                                        <option>Select your gender</option>
+                                        </select>
+                                      </div>
+                                  </div>
+                            <div class="form-group row">
+                                <label for="Address1" class="col-md-4 col-form-label text-md-right">Address 1</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="Address1" class="form-control" asp-for="VisaApplication.Applicant.Address1" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="Address2" class="col-md-4 col-form-label text-md-right">Address 2</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="Address2" class="form-control" asp-for="VisaApplication.Applicant.Address2" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="City" class="col-md-4 col-form-label text-md-right">City</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="City" class="form-control" asp-for="VisaApplication.Applicant.City " required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="State" class="col-md-4 col-form-label text-md-right">State</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="State" class="form-control" asp-for="VisaApplication.Applicant.State ">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="PostalCode" class="col-md-4 col-form-label text-md-right">Postal Code</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="PostalCode" class="form-control" asp-for="VisaApplication.Applicant.PostalCode " required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="country" class="col-md-4 col-form-label text-md-right">Country</label>
+                                <div class="col-md-6">
+                                    <select class="selectpicker form-control" name="country" id="country" asp-for="VisaApplication.Applicant.Country"  >
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="Nationality" class="col-md-4 col-form-label text-md-right">Nationality</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="Nationality" class="form-control" asp-for="VisaApplication.Applicant.Nationality"  >
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="DOB" class="col-md-4 col-form-label text-md-right">DOB</label>
+                                <div class="col-md-6">
+                                    <input type="date" id="DOB" class="form-control" asp-for="VisaApplication.Applicant.DOB" required>
+                                </div>
+                            </div>
+                                <div class="form-group row">
+                                    <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail ID</label>
+                                    <div class="col-md-6">
+                                    <input type="email" id="email_address" class="form-control" asp-for="VisaApplication.Applicant.Email" required>
+                                    </div>
+                                </div>
+                            <div class="form-group row">
+                                <label for="MobileNumber" class="col-md-4 col-form-label text-md-right">Mobile Number</label>
+                                <div class="col-md-6">
+                                    <input type="number" id="MobileNumber" class="form-control" asp-for="VisaApplication.Applicant.MobileNumber" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="PassportNumber" class="col-md-4 col-form-label text-md-right">Passport Number</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="PassportNumber" class="form-control" asp-for="VisaApplication.Applicant.PassportNumber" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="PassportExpiryDate" class="col-md-4 col-form-label text-md-right">Passport Expiry Date</label>
+                                <div class="col-md-6">
+                                    <input type="date" id="PassportExpiryDate" class="form-control" asp-for="VisaApplication.Applicant.PassportExpiryDate" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="MaritalStatus" class="col-md-4 col-form-label text-md-right">Marital Status</label>
+                                <div class="col-md-6">
+                                    <select class="selectpicker form-control" id="MaritalStatus" asp-for="VisaApplication.Applicant.MaritalStatus" asp-items="Html.GetEnumSelectList<MaritalStatus>()" data-live-search="true">
+                                        <option>Marital Status</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label>
+                                    Visa Details
+                                </label>
+                            </div>
+                            <div class="form-group row">
+                                <label for="startdate" class="col-md-4 col-form-label text-md-right">Start Date</label>
+                                <div class="col-md-6">
+                                    <input type="date" id="startdate" class="form-control" asp-for="VisaApplication.StartDate ">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="enddate" class="col-md-4 col-form-label text-md-right">End Date</label>
+                                <div class="col-md-6">
+                                    <input type="date" id="enddate" class="form-control" asp-for="VisaApplication.EndDate ">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="surename" class="col-md-4 col-form-label text-md-right">Visa Type</label>
+                                <div class="col-md-6">
+                                    <select class="form-control" id="visatype" asp-for="VisaApplication.VisaTypeID" required >
+                                        <option value="">-- Select an item --</option>
+                                        @foreach (var item in Model.AvailableVisaTypes)
+                                        {
+                                            <option value="@item.VisaTypeID ">@item.VisaName</option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+
+                                    <div class="col-md-6 offset-md-4">
+                                        <button type="submit"  class="btn btn-primary">
+                                        Submit
+                                        </button>
+                                    </div>
+                                </div>
+                           
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+</form>
+
+
+@section JavaScript
+{
+    <script>
+        //console.log(countries);
+
+         
+        $(document).ready(function(){
+             
+                let options = "";
+            countries.forEach(element => {
+                options += `<option value='${element.code}' data-tokens="${element.name}" >${element.name}</option>`
+            });
+            $('#country').html(options);
+
+            // $('.selectpickerw').selectpicker();
+
+        })
+
+
+        function submitForm(){
+
+            data = $('#registerForm').serializeArray();
+            // alert();
+
+            console.log(data);
+
+
+        }
+
+    </script>
+}
+

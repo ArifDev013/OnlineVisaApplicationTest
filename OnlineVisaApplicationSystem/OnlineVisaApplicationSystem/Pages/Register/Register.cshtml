@@ -1,0 +1,83 @@
+﻿@page "/Register/Register"
+@using static Utils.Enums
+@model OnlineVisaApplicationSystem.Pages.Register.RegisterModel
+@{
+    //Layout = "Layout.cshtml";
+}
+@if (TempData.ContainsKey("AlertMessage"))
+{
+    <div class="alert alert-@TempData["AlertType"]" role="alert">
+        @TempData["AlertMessage"]
+    </div>
+} 
+
+
+    <form name="register-form" id='registerForm' method="post">
+        <main class="my-form">
+            <div class="cotainer">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header">Register</div>
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <label for="full_name" class="col-md-4 col-form-label text-md-right">Name</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="name" asp-for="user.Name" class="form-control" required >
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="email" asp-for="user.Username" class="form-control"   required='email'>
+                                    </div>
+                                </div>
+
+                               
+
+                                <div class="form-group row">
+                                    <label for="phone_number" class="col-md-4 col-form-label text-md-right">Phone Number</label>
+                                    <div class="col-md-6">
+                                    <input type="number" id="phone_number" asp-for="user.Mobile" class="form-control" required>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="form-group row">
+                                    <label for="password" class="col-md-4 col-form-label text-md-right">Password </label>
+                                    <div class="col-md-6">
+                                    <input type="password" id="password" asp-for="user.Password" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="confirm_password" class="col-md-4 col-form-label text-md-right">confirm password </label>
+                                    <div class="col-md-6">
+                                        <input type="password" id="confirm_password" asp-for="ConfirmPassword" class="form-control" >
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 offset-md-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        Register
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </form>
+
+ 
+
+@*<script>
+        function clear() {
+            // Replace 'yourFormId' with the actual ID of your form
+            var form = document.getElementById('registerForm'); form.reset();
+            fetch('/Register/Register?handler=Clear', { method: 'POST' });
+        }
+</script>*@
